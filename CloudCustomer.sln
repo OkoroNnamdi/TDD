@@ -3,32 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCustomer.Api", "CloudCustomer.Api\CloudCustomer.Api.csproj", "{0025F438-34F4-43D8-B18A-59296156061E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudCustomer.Api", "CloudCustomer.Api\CloudCustomer.Api.csproj", "{0025F438-34F4-43D8-B18A-59296156061E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCustomer.UnitTest", "CloudCustomer.UnitTest\CloudCustomer.UnitTest.csproj", "{45E29E3C-ABA7-4562-A077-9D71B1ECD718}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cloudcustomer.UnitTests", "cloudcustomer.UnitTests\cloudcustomer.UnitTests.csproj", "{64CC2EB5-CA21-4BB6-852F-0D0E237E4C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cloudcustomer.UnitTests", "cloudcustomer.UnitTests\cloudcustomer.UnitTests.csproj", "{64CC2EB5-CA21-4BB6-852F-0D0E237E4C7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0025F438-34F4-43D8-B18A-59296156061E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0025F438-34F4-43D8-B18A-59296156061E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0025F438-34F4-43D8-B18A-59296156061E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0025F438-34F4-43D8-B18A-59296156061E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{45E29E3C-ABA7-4562-A077-9D71B1ECD718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{45E29E3C-ABA7-4562-A077-9D71B1ECD718}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{45E29E3C-ABA7-4562-A077-9D71B1ECD718}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{45E29E3C-ABA7-4562-A077-9D71B1ECD718}.Release|Any CPU.Build.0 = Release|Any CPU
 		{64CC2EB5-CA21-4BB6-852F-0D0E237E4C7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{64CC2EB5-CA21-4BB6-852F-0D0E237E4C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64CC2EB5-CA21-4BB6-852F-0D0E237E4C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64CC2EB5-CA21-4BB6-852F-0D0E237E4C7A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BEB1E6F6-0504-4B69-9AA1-A2C22B6E2676}
 	EndGlobalSection
 EndGlobal
