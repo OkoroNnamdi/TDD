@@ -1,6 +1,6 @@
 ﻿namespace CloudCustomer.Api.UserService
 {
-    public class UserService
+    public class UserService:IUserService 
     {
     }
 }
