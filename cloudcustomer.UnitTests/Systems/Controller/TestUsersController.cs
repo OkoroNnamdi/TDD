@@ -13,7 +13,12 @@ public class TestUsersController
     public async Task  Get_Onsucess_ReturnStatusCode200()
     {
         //Arrange
-       var sut = new UserController();
+        var MockService = new Mock<IUserService>();
+        MockService.Setup(service => service.GetAllUsers())
+           .ReturnsAsync(new List<User>());
+        var sut = new UserController(MockService.Object);
+
+       
         //Act
 
         var result =(OkObjectResult)await  sut.Get();
