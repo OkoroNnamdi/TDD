@@ -1,3 +1,4 @@
+using cloudcustomer.UnitTests.Fixtures;
 using CloudCustomer.Api.Controllers;
 using CloudCustomer.Api.Model;
 using CloudCustomer.Api.UserService;
@@ -15,7 +16,7 @@ public class TestUsersController
         //Arrange
         var MockService = new Mock<IUserService>();
         MockService.Setup(service => service.GetAllUsers())
-           .ReturnsAsync(new List<User>());
+           .ReturnsAsync(UsersFixture.GetTestUsers());
         var sut = new UserController(MockService.Object);
 
        
@@ -24,8 +25,10 @@ public class TestUsersController
         var result =(OkObjectResult)await  sut.Get();
 
         //Assert
-        result.StatusCode.Should().Be(200);
-
+        result.Should().BeOfType<OkObjectResult>();
+        var ObjectResult = (OkObjectResult)result;
+        ObjectResult.StatusCode.Should().Be(200);
+       
 
     }
     [Fact]
@@ -35,6 +38,7 @@ public class TestUsersController
         var MockService = new Mock<IUserService>();
         MockService.Setup(service=>service.GetAllUsers())
             .ReturnsAsync(new List<User>());
+
         var sut = new UserController(MockService.Object);
 
 
@@ -46,4 +50,35 @@ public class TestUsersController
         MockService.Verify(service =>service.GetAllUsers(),Times.Once);
 
     }
+    [Fact]
+    public async Task Get_OnSucess_ReturnListOfUsers()
+    {
+        //Arrange
+        var MockService = new Mock<IUserService>();
+        MockService.Setup(service => service.GetAllUsers())
+            .ReturnsAsync(UsersFixture.GetTestUsers());
+        var sut = new UserController(MockService.Object);
+        //act 
+        var result = await sut.Get();
+        //Assert
+        result.Should().BeOfType <OkObjectResult >();
+        var objectResult =(OkObjectResult )result;
+        objectResult.Value.Should().BeOfType<List<User>>();
+    }
+    [Fact]
+    public async Task Get_OnNotFound_Returns404()
+    {
+        //Arrange
+        var MockService = new Mock<IUserService>();
+        MockService.Setup(service => service.GetAllUsers())
+            .ReturnsAsync(new List<User>());
+        var sut = new UserController(MockService.Object);
+        //act 
+        var result = await sut.Get();
+        //Assert
+        result.Should().BeOfType<NotFoundResult>();
+       var ObjectResult = (NotFoundResult )result;
+        ObjectResult.StatusCode.Should().Be(404);
+    }
+
 }

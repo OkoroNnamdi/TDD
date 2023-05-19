@@ -14,15 +14,17 @@ public class UserController : ControllerBase
         _userService = userService;
     }
 
-    public UserController()
-    {
-        
-    }
-
     [HttpGet(Name ="GetUsers")]
     public async Task<IActionResult > Get()
     {
         var users = await _userService.GetAllUsers();
-        return Ok("All is Good");
+        if (users.Any())
+        {
+            return Ok(users);
+        }
+        else
+        {
+            return NotFound ();
+        }
     }
 }
